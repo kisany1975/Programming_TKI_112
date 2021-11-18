@@ -5,11 +5,11 @@ using namespace std;
 
 
 /**
-*\brief Поиск значения a и b
-* param x параметр x
-* param y параметр y
-* param z параметр z
-* return значения a и b
+*\brief РџРѕРёСЃРє Р·РЅР°С‡РµРЅРёСЏ a Рё b
+* param x РїР°СЂР°РјРµС‚СЂ x
+* param y РїР°СЂР°РјРµС‚СЂ y
+* param z РїР°СЂР°РјРµС‚СЂ z
+* return Р·РЅР°С‡РµРЅРёСЏ a Рё b
 */
 int main()
 {
