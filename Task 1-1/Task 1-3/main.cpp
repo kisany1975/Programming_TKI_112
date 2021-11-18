@@ -4,24 +4,24 @@
 using namespace std;
 
 /**
-* brief Расчёт совершённой работы
-* param time - время, 20 минут в секундах
-* param amperege - сила тока
-* param voltage - напряжение
-* param work - работа
-* return Совершённая работа
+* brief Р Р°СЃС‡С‘С‚ СЃРѕРІРµСЂС€С‘РЅРЅРѕР№ СЂР°Р±РѕС‚С‹
+* param time - РІСЂРµРјСЏ, 20 РјРёРЅСѓС‚ РІ СЃРµРєСѓРЅРґР°С…
+* param amperege - СЃРёР»Р° С‚РѕРєР°
+* param voltage - РЅР°РїСЂСЏР¶РµРЅРёРµ
+* param work - СЂР°Р±РѕС‚Р°
+* return РЎРѕРІРµСЂС€С‘РЅРЅР°СЏ СЂР°Р±РѕС‚Р°
 */
 
 int main()
 {
     double time = 1200;
-    cout << "Введите силу тока в амперах: ";
+    cout << "Р’РІРµРґРёС‚Рµ СЃРёР»Сѓ С‚РѕРєР° РІ Р°РјРїРµСЂР°С…: ";
     double amperage = 0;
     cin >> amperage;
-    cout << "Введите напряжение в волтьтах: ";
+    cout << Р’РІРµРґРёС‚Рµ РЅР°РїСЂСЏР¶РµРЅРёРµ РІ РІРѕР»С‚СЊС‚Р°С…: ";
     double voltage = 0;
     cin >> voltage;
     double work = time * amperage * voltage;
-    cout << "Работа совершённая током: " << work << " Дж" << endl;
+    cout << "Р Р°Р±РѕС‚Р° СЃРѕРІРµСЂС€С‘РЅРЅР°СЏ С‚РѕРєРѕРј: " << work << " Р”Р¶" << endl;
     return 0;
 }
