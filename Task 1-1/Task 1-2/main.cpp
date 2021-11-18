@@ -5,17 +5,17 @@ setlocale(LC_ALL, "ru");
 using namespace std;
 
 /**
-* brief Расчёт веса из грамм в унции 
-* param weight - вес
-* return Вес в унциях
+* brief Р Р°СЃС‡С‘С‚ РІРµСЃР° РёР· РіСЂР°РјРј РІ СѓРЅС†РёРё 
+* param weight - РІРµСЃ
+* return Р’РµСЃ РІ СѓРЅС†РёСЏС…
 */
 
 int main()
 {
-    cout << "Введите вес в граммах: ";
+    cout << "Р’РІРµРґРёС‚Рµ РІРµСЃ РІ РіСЂР°РјРјР°С…: ";
     double weight = 0;
     cin >> weight;
     weight = weight / 28.3;
-    cout << "Вес в унциях состовляет: " << weight << endl;
+    cout << "Р’РµСЃ РІ СѓРЅС†РёСЏС… СЃРѕСЃС‚РѕРІР»СЏРµС‚: " << weight << endl;
     return 0;
 }
