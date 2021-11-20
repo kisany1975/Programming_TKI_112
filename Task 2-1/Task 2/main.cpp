@@ -2,6 +2,7 @@
 #include <cmath>
 using namespace std;
 
+
 /**
 *\brief Варианты выбора для пользователя
 * \param math_Perimeter - периметр
@@ -9,20 +10,18 @@ using namespace std;
 * \param math_lenDiagonal - длина диагонали
 * \return 0
 */
-enum Maths
+enum class MATH_OPTIONS
 {
-    math_Perimeter = 1,
-    math_Square = 2,
-    math_lenDiagonal = 3
+    math_perimeter,
+    math_square,
+    math_lenDiagonal
 };
 
 /**
-*\brief Поиск значения площади, пермитра, длины диагонали
-* \param wight - ширина
-* \param height - высота
-* \return значение площади, периметра, длины диагонали
+* brief точка входа в программу
+* return 0
 */
-void res_math()
+int res_math()
 {
     int answer;
     double width;
@@ -32,26 +31,32 @@ void res_math()
     double lenDiagonal;
 
 
-    cout << "Что вы хотите вычислить? От 1 до 3" << endl;
-    cout << "Периметр - 1, Площадь - 2, Длина диагонали - 3" << endl;
+    cout << "Что вы хотите вычислить?" << endl;
+    cout << "Периметр - " << static_cast<int>(MATH_OPTIONS::math_perimeter)<< endl;
+    cout << "Площадь - " << static_cast<int>(MATH_OPTIONS::math_square) << endl;
+    cout << "Длину диагонали - " << static_cast<int>(MATH_OPTIONS::math_lenDiagonal) << endl;;
     cin >> answer;
-    switch (answer)
+    
+    const auto math_options = static_cast<MATH_OPTIONS>(answer);
+    
+    
+    switch (math_options)
     {
-    case math_Perimeter:
+    case MATH_OPTIONS::math_perimeter:
         cout << "Периметр" << endl;
         cin >> width;
         cin >> height;
         Perimeter = (width + height) * 2;
-        cout << "Периметор = " << Perimeter << endl;
+        cout << "Периметр = " << Perimeter << endl;
         break;
-    case math_Square:
+    case MATH_OPTIONS::math_square:
         cout << "Площадь" << endl;
         cin >> width;
         cin >> height;
         Square = width * height;
         cout << "Площадь =" << Square << endl;
         break;
-    case math_lenDiagonal:
+    case MATH_OPTIONS::math_lenDiagonal:
         cout << "Диагональ" << endl;
         cin >> width;
         cin >> height;
@@ -62,11 +67,10 @@ void res_math()
         cout << "Нет такой задачи!";
         break;
     }
-
 }
 /**
 *\brief Возвращение значения res_math
-* \return 0, в случае успеха
+* \return 0 в случае успеха
 */
 int main()
 {
