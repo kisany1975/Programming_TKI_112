@@ -4,24 +4,33 @@
 using namespace std;
 
 /**
-* brief Расчёт совершённой работы
+* brief Функция для вычисление работы
 * param time - время, 20 минут в секундах
-* param amperege - сила тока
+* param amperage - сила тока
 * param voltage - напряжение
-* param work - работа
-* return Совершённая работа
+* return значение работы
 */
+double getWork(const double time, double amperage, double voltage);
 
+/**
+* brief точка входа в программу
+* return 0 в случае успеха
+*/
 int main()
 {
-    double time = 1200;
+    const double time = 1200;
     cout << "Введите силу тока в амперах: ";
-    double amperage = 0;
+    double amperage;
     cin >> amperage;
-    cout << Введите напряжение в волтьтах: ";
-    double voltage = 0;
+    cout << "Введите напряжение в волтьтах : ";
+    double voltage;
     cin >> voltage;
-    double work = time * amperage * voltage;
+    const double work = getWork(time, amperage, voltage);
     cout << "Работа совершённая током: " << work << " Дж" << endl;
     return 0;
+}
+
+double getWork(const double time, double amperage, double voltage)
+{
+    return time * amperage * voltage;
 }
