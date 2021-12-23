@@ -1,51 +1,54 @@
+#include <cmath>
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 using namespace std;
+/**
+ * \brief Рассчитывает значение функции в заданной точке
+ * \param x Заданная точка
+ * \return Значение функции
+ */
+double Func(double x);
 
-/*
-* \brief вычисление значения функции
-* \param x значение переменной x
-* \return значение функции
-*/
-double func(const double x);
+/**
+ * \brief Существует ли точка в заданной точке
+ * \param x Заданная точка
+ * \return true, если значение функции в заданной точке существует
+ */
+bool getFunc(double x);
 
-/*
-* \brief выполняет функцию
-* \param x значение переменной x
-* \return 1, в случае успеха
-*/
-double NoSol(const double x);
-
-/*
-* \brief точка входа в программу
-* \return 0, в случае успеха
-*/
+/**
+ * \brief Точка входа в программу
+ * \return 0 в слчуае успеха
+ */
 int main()
 {
-    cout << fixed << setprecision(5);
-    double x = 1;
-    const auto edge = 2;
-    const auto step = 0.10;
-
-    for (x; x <= edge; x += step)
+    const double xStart = 1.0;
+    const double xFin = 2.1;
+    const double step = 0.1;
+    double x = xStart;
+    while (x <= xFin)
     {
-        if (NoSol(x))
+        if (getFunc(x))
         {
-            cout << "Нет решений" << endl;
+            const double y = Func(x);
+            cout << "x = " << setw(5) << left << setprecision(5) << x << " y = " << y << "\n";
         }
-        cout << "x = " << x << " " << "y = " << NoSol(x) << " " << "\n";
-    }
+        else
+        {
+            cout << "x = " << x << " y = не существует" << "\n";
+        }
 
+        x += step;
+    }
     return 0;
 }
 
-double func(const double x)
+double Func(const double x)
 {
-    return cos(2.0 / x) - 2 * sin(1.0 / x) + 1.0 / x;
+    return cos(2.0/x) - 2 * sin(1.0/x) + 1.0/x;
 }
 
-double NoSol(const double x)
+bool getFunc(const double x)
 {
-    return (1 / cos(2.0 / x) - 2 * sin(1.0 / x) + 1.0 / x);
+    return x >= 0;
 }
