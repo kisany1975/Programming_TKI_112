@@ -50,5 +50,5 @@ double Func(const double x)
 
 bool getFunc(const double x)
 {
-    return x != 0;
+    return x > 0;
 }
