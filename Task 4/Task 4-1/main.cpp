@@ -3,19 +3,51 @@
 #include <cmath> 
 using namespace std;
 
+/**
+ * brief ввод элементов массива с клавиатуры
+ * param array указатель на массив
+ * param n размер массива
+ */
 void FillArrayKeyboard(int* array, const size_t n);
 
+/**
+ * brief заполнение элементов массива случайными числами
+ * param array указатель на массив
+ * param n размер массива
+ * param min левая граница диапазона случайных чисел
+ * param max правая граница диапазона случайных чисел
+ */
 void FillArrayRandom(int* array, const size_t n, const int min, const int max);
 
+/**
+ * brief заменение последних k элементов массива на противоположные
+ * param array указатель на массив
+ * param n размер массива
+ * param k вводимое число пользователем
+ */
 void ReplaceElement(int* array, const size_t n, int k);
 
+/**
+ * brief поиск и вывод элементов массива кратных на 3
+ * param array указатель на массив
+ * param n размер массива
+ * return элементы кратные на 3
+ */
 int SearchInd(const int* array,const size_t n);
 
-
-
+/**
+* brief выбор метода ввода
+*/
 enum class Method
 {
+/**
+* brief ввод с клавиатуры
+*/
 	KEYBOARD,
+
+/**
+* brief ввод с помощью случайных чисел
+*/
 	RANDOM
 
 };
