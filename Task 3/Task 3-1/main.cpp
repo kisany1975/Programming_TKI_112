@@ -1,6 +1,7 @@
 #include <cmath>
 #include <iostream>
 #include <iomanip>
+#include <limits>
 using namespace std;
 /**
  * \brief Рассчитывает значение функции в заданной точке
@@ -50,5 +51,5 @@ double Func(const double x)
 
 bool getFunc(const double x)
 {
-    return abs(x >= 2.22507e-308);
+    return numeric_limits<double>::min();
 }
